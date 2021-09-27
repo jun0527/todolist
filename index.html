@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="scss/all.css">
+</head>
+<body>
+    <header class="header">
+      <h1>TODO LIST</h1>
+    </header>
+    <main>
+      <section class="container">
+        <div class="addListArea">
+          <input class="js-addInput" type="text" placeholder="新增待辦事項">
+          <button class="js-addBtn addBtn" type="button">
+            <span class="material-icons">
+              add
+            </span>
+          </button>
+        </div>
+      </section>
+      <section class="container">
+        <div class="js-todoListArea todoListArea">
+          <ul class="js-listHeader listHeader d-flex">
+            <li class="active">
+              <a class="d-block w-100" href="javascript:;">全部</a>
+            </li>
+            <li>
+              <a class="d-block w-100" href="javascript:;">待完成</a>
+            </li>
+            <li>
+              <a class="d-block w-100" href="javascript:;">已完成</a>
+            </li>
+          </ul>
+          <div class="listBodyArea">
+            <ul class="js-listBody">
+            </ul>
+            <div class="listFooter d-flex jc-between">
+              <p><span class="js-listNum">0</span> 個待完成項目</p>
+              <a class="js-deleteAll deleteAll" href="javascript:;">清除已完成項目</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  <script src="js/all.js"></script>
+</body>
+</html>

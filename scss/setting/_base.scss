@@ -1,0 +1,21 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+body {
+  color: $dark;
+  min-height: 100vh;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: linear-gradient(174deg, $primary 0%, $primary 50%, $white 50%, $white 100%,);
+}
+h1 {
+  font-size: 48px;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-weight: bold;
+  color: $dark;
+  text-align: center;
+  letter-spacing: 8.75px;
+  line-height: 82px;
+}
+a {
+  text-decoration: none;
+}

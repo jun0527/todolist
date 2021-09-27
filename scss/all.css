@@ -1,0 +1,319 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #333333;
+  min-height: 100vh;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: linear-gradient(174deg, #FFD370 0%, #FFD370 50%, #fff 50%, #fff 100%);
+}
+
+h1 {
+  font-size: 48px;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  letter-spacing: 8.75px;
+  line-height: 82px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg-primary {
+  background: #FFD370;
+}
+
+.text-primary {
+  color: #FFD370;
+}
+
+.bg-dark {
+  background: #333333;
+}
+
+.text-dark {
+  color: #333333;
+}
+
+.bg-gray {
+  background: #9f9a91;
+}
+
+.text-gray {
+  color: #9f9a91;
+}
+
+.bg-light {
+  background: #efefef;
+}
+
+.text-light {
+  color: #efefef;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.jc-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ai-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  max-width: 524px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 48px;
+  padding-bottom: 26px;
+}
+
+.addListArea {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.addListArea input {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-family: 'Noto Sans TC', sans-serif;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+}
+
+.addListArea .addBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #333333;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.addListArea .addBtn:hover {
+  opacity: 0.8;
+}
+
+.addListArea .addBtn span {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+}
+
+.todoListArea {
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 92px;
+}
+
+.listHeader li {
+  width: 33.3333%;
+  text-align: center;
+}
+
+.listHeader li:hover a {
+  color: #333333;
+  font-weight: bold;
+  border-bottom: 2px solid #333333;
+}
+
+.listHeader li.active a {
+  color: #333333;
+  font-weight: bold;
+  border-bottom: 2px solid #333333;
+}
+
+.listHeader a {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #9f9a91;
+  border-bottom: 2px solid #efefef;
+}
+
+.listBodyArea {
+  padding: 8px 12px 8px 20px;
+}
+
+.todoListItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.todoListItem:hover button {
+  display: block;
+}
+
+.todoListItem.checked .listContent {
+  color: #9f9a91;
+  text-decoration: line-through;
+}
+
+.todoListItem.checked .checkboxChecked {
+  display: block;
+}
+
+.todoListItem .listContent {
+  border-bottom: 1px solid #efefef;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 16px 0;
+  margin-left: 12px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.checkboxArea {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.checkboxArea span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.deleteBtnArea {
+  width: 24px;
+  height: 24px;
+}
+
+.deleteBtnArea button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.deleteBtnArea button:hover {
+  color: #9f9a91;
+}
+
+.deleteBtnArea span {
+  font-size: 24px;
+}
+
+.listFooter {
+  padding: 24px 36px 24px 0;
+  font-size: 14px;
+}
+
+.listFooter a {
+  color: #9f9a91;
+}
+
+.listFooter a:hover:not(.disabled) {
+  color: #333333;
+  font-weight: bold;
+}
+
+.listFooter a.disabled {
+  cursor: no-drop;
+}
+/*# sourceMappingURL=all.css.map */

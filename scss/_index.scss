@@ -1,0 +1,139 @@
+.container {
+  max-width: 524px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: 0 auto;
+}
+.header {
+  padding-top: 48px;
+  padding-bottom: 26px;
+}
+.addListArea {
+  position: relative;
+  margin-bottom: 8px;
+  input {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    font-family: 'Noto Sans TC', sans-serif;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+  }
+  .addBtn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: $dark;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+    span {
+      display: block;
+      font-size: 20px;
+      color: $white;
+    }
+  }
+}
+.todoListArea {
+  background: $white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+  margin-bottom: 92px;
+}
+.listHeader {
+  li {
+    width: 33.3333%;
+    text-align: center;
+    &:hover a {
+      color: $dark;
+      font-weight: bold;
+      border-bottom: 2px solid $dark;
+    }
+    &.active a {
+      color: $dark;
+      font-weight: bold;
+      border-bottom: 2px solid $dark;
+    }
+  }
+  a {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: $gray;
+    border-bottom: 2px solid $light;
+  }
+}
+.listBodyArea {
+  padding: 8px 12px 8px 20px;
+}
+.todoListItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover button {
+    display: block;
+  }
+  &.checked .listContent {
+    color: $gray;
+    text-decoration: line-through;
+  }
+  &.checked .checkboxChecked{
+    display: block;
+  }
+  // &.checked .checkboxChecked{
+  //   display: block;
+  // }
+  .listContent {
+    border-bottom: 1px solid $light;
+    flex-grow: 1;
+    padding: 16px 0;
+    margin-left: 12px;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+}
+.checkboxArea {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.deleteBtnArea {
+  width: 24px;
+  height: 24px;
+  button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    &:hover {
+      color: $gray;
+    }
+  }
+  span {
+    font-size: 24px;
+  }
+}
+.listFooter {
+  padding: 24px 36px 24px 0;
+  font-size: 14px;
+  a {
+    color: $gray;
+    &:hover:not(.disabled) {
+      color: $dark;
+      font-weight: bold;
+    }
+    &.disabled {
+      cursor: no-drop;
+    }
+  }
+}
