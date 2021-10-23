@@ -3,7 +3,7 @@ const addBtn = document.querySelector('.js-addBtn');
 const todoList = document.querySelector('.js-listBody');
 const todoListArea = document.querySelector('.js-todoListArea');
 const listTags = document.querySelectorAll('.js-listHeader li');
-const listTagBtnList = document.querySelectorAll('.js-listHeader li a');
+const listTagBtnList = document.querySelector('.js-listHeader');
 const listNum = document.querySelector('.js-listNum');
 const deleteAll = document.querySelector('.js-deleteAll');
 
@@ -15,7 +15,15 @@ function init() {
 }
 init();
 //新增待辦事項功能
-addBtn.addEventListener('click', () => {
+addBtn.addEventListener('click', addList);
+addInput.addEventListener('keydown', (e) => {
+  switch (e.keyCode) {
+    case 13:
+      addList();
+      break;
+  }
+})
+function addList() {
   switch (addInput.value.trim()) {
     case '':
       alert('請輸入待辦事項！');
@@ -32,7 +40,7 @@ addBtn.addEventListener('click', () => {
       listStatus = 'all';
       renderList();
   }
-})
+}
 //將陣列內容渲染到網頁
 function renderList() {
   let list;
@@ -67,8 +75,8 @@ function renderList() {
           </div>
           <label class="listContent" for="${item.id}">${item.content}</label>
           <div class="deleteBtnArea">
-            <button class="js-deleteBtn deleteBtn" type="button" data-id="${item.id}">
-              <span class="material-icons d-block" data-id="${item.id}">
+            <button class="js-deleteBtn deleteBtn" type="button">
+              <span class="material-icons d-block">
                 clear
               </span>
             </button>
@@ -112,18 +120,10 @@ function editList(e) {
         case null:
           let isChecked = checkboxList[filterIndex].checked;
           checkboxList[filterIndex].checked = !isChecked;
-          switch (checkboxList[filterIndex].checked) {
-            case true:
-              todoListAll[allListIndex].checked = true;
-              break;
-            case false:
-              todoListAll[allListIndex].checked = false;
-              break;
-          }
+          todoListAll[allListIndex].checked = checkboxList[filterIndex].checked;
           break;
         default:
           todoListAll.splice(allListIndex, 1);
-          renderList();
           break;
       }
       renderList();
@@ -151,27 +151,16 @@ function findIdIndex(id) {
 }
 
 //切換頁籤
-function changeStatus() {
-  listTagBtnList.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      tagStatusReset();
-      switch (index) {
-        case 0:
-          listStatus = 'all';
-          break;
-        case 1:
-          listStatus = 'undone';
-          break;
-        case 2:
-          listStatus = 'done';
-          break;
-      }
-      listTags[index].classList.add('active');
-      renderList();
-    })
-  })
+listTagBtnList.addEventListener('click', changeTagBtn);
+function changeTagBtn(e) {
+  console.log(e.target.closest('li'));
+  console.log(e.target.closest('li').dataset.btn);
+  tagStatusReset();
+  li = e.target.closest('li');
+  listStatus = e.target.closest('li').dataset.btn;
+  li.classList.add('active');
 }
-changeStatus();
+//清除所有頁籤active
 function tagStatusReset() {
   listTags.forEach((item) => {
     item.classList.remove('active');
