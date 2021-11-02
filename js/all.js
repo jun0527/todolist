@@ -159,6 +159,7 @@ function changeTagBtn(e) {
   li = e.target.closest('li');
   listStatus = e.target.closest('li').dataset.btn;
   li.classList.add('active');
+  renderList();
 }
 //清除所有頁籤active
 function tagStatusReset() {
